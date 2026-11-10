@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light;
+  font: 15px/1.5 ui-sans-serif, system-ui, sans-serif;
+  color: #1f1e1c;
+  background: #f6f5f4;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.lead {
+  margin: 0 0 24px;
+}
+
+form {
+  display: grid;
+  gap: 6px;
+  padding: 20px;
+  border: 1px solid #e4e0db;
+  border-radius: 12px;
+  background: #fff;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 650;
+}
+
+input[type="url"],
+input[type="password"],
+input[type="text"],
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #d9d4ce;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: 14px/1.4 ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  margin: 10px 0 0;
+  padding: 12px;
+  border: 1px solid #e4e0db;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 4px;
+  font-weight: 650;
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.choice input {
+  margin-top: 3px;
+}
+
+.choice.inline {
+  align-items: center;
+  font-weight: 400;
+}
+
+.help,
+.choice .help {
+  display: block;
+  margin: 0 0 8px;
+  color: #5e5a55;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.choice strong {
+  display: block;
+}
+
+#token-field[hidden] {
+  display: none;
+}
+
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.groups button,
+.secondary,
+.primary {
+  font: inherit;
+  cursor: pointer;
+}
+
+.groups button {
+  border: 1px solid #d9d4ce;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fff;
+  color: inherit;
+  font-weight: 400;
+}
+
+.groups button[aria-pressed="true"] {
+  border-color: #c84b1a;
+  color: #c84b1a;
+}
+
+.secondary {
+  justify-self: start;
+  margin: 4px 0 8px;
+  border: 1px solid #d9d4ce;
+  border-radius: 8px;
+  padding: 7px 12px;
+  background: #fff;
+  color: inherit;
+}
+
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary {
+  justify-self: start;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 16px;
+  background: #c84b1a;
+  color: #fff;
+  font-weight: 650;
+}
+
+#status {
+  min-height: 1.4em;
+  margin: 0;
+}
+
+.success { color: #1f6b3a; }
+.error { color: #9f2b2b; }

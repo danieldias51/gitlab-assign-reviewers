@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GitLab Assign Reviewers</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header>
+      <h1>Add reviewers</h1>
+      <button type="button" id="open-settings" class="text">Settings</button>
+    </header>
+    <p id="page" class="muted">Checking this tab…</p>
+    <label class="field">
+      Group
+      <select id="group"></select>
+    </label>
+    <ul id="team"></ul>
+    <p id="auth" class="muted"></p>
+    <p class="hint">People already reviewing this merge request stay as they are. A click adds only the missing ones.</p>
+    <button type="button" id="add" class="primary" disabled>Add team reviewers</button>
+    <p id="result" role="status" hidden></p>
+    <script src="gitlab.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

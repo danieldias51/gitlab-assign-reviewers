@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GitLab Assign Reviewers settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <h1>GitLab Assign Reviewers</h1>
+      <p class="lead">
+        Save named groups of teammates, such as backend and frontend. The popup opens on the default group, and you can switch groups there before adding reviewers.
+      </p>
+
+      <form id="settings">
+        <label>
+          GitLab site
+          <input id="origin" name="origin" type="text" inputmode="url" placeholder="https://gitlab.example.com" autocomplete="off" spellcheck="false" required>
+        </label>
+        <p class="help">The site root only. This can be gitlab.com or your company's GitLab.</p>
+
+        <fieldset>
+          <legend>Reviewer groups</legend>
+          <div id="group-list" class="groups"></div>
+          <button type="button" id="add-group" class="secondary">Add group</button>
+          <label>
+            Group name
+            <input id="group-name" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="Backend">
+          </label>
+          <label>
+            Usernames
+            <textarea id="usernames" rows="5" placeholder="alice, bob, carol"></textarea>
+          </label>
+          <p class="help">Comma, space, or newline separated. A leading @ is optional.</p>
+          <label class="choice">
+            <input id="group-default" type="checkbox">
+            <span>Show this group when the popup opens</span>
+          </label>
+          <button type="button" id="remove-group" class="secondary">Remove group</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Authentication</legend>
+          <label class="choice">
+            <input type="radio" name="authMode" value="session" checked>
+            <span>
+              <strong>Browser session</strong>
+              <span class="help">Use the GitLab login already open in this browser. No token to create.</span>
+            </span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="authMode" value="token">
+            <span>
+              <strong>Personal access token</strong>
+              <span class="help">Send a token with the api scope. It stays in this browser's extension storage.</span>
+            </span>
+          </label>
+        </fieldset>
+
+        <div id="token-field">
+          <label>
+            Personal access token
+            <input id="token" name="token" type="password" autocomplete="off" spellcheck="false">
+          </label>
+          <label class="choice inline">
+            <input id="show-token" type="checkbox">
+            <span>Show token</span>
+          </label>
+          <p class="help">In GitLab: Preferences, then Access tokens. Create a token with the api scope. Leave this blank to forget a saved token.</p>
+        </div>
+
+        <button type="submit" class="primary">Save</button>
+        <p id="status" role="status"></p>
+      </form>
+    </main>
+    <script src="gitlab.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "GitLab Assign Reviewers",
+  "version": "0.1.0",
+  "description": "Add a saved list of GitLab teammates as reviewers on the merge request you have open.",
+  "homepage_url": "https://github.com/danieldias51/gitlab-assign-reviewers",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{01a1c632-f6b7-7cb0-987b-05c20a91c90a}",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "scripts": ["src/gitlab.js", "src/background.js"]
+  },
+  "action": {
+    "default_title": "Add team reviewers",
+    "default_popup": "src/popup.html",
+    "default_icon": "icons/icon.svg"
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  }
+}
