@@ -4,7 +4,7 @@ Firefox extension that adds a saved group of teammates as reviewers on the merge
 
 The click adds only people who are not already reviewers. Everyone else on the merge request stays as they are, and someone already on your list is not asked for a fresh review.
 
-## Load it in Firefox
+## Test instructions
 
 1. Open `about:debugging#/runtime/this-firefox`.
 2. Click **Load Temporary Add-on**.
@@ -32,6 +32,10 @@ GitLab receives `/assign_reviewer` for the missing usernames. The extension then
 ```bash
 npm test
 ```
+
+## Privacy
+
+The extension sends data only to the GitLab site you configure. See [PRIVACY.md](PRIVACY.md).
 
 ## License
 
